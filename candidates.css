@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #151320;
+}
+section {
+  height: 100vh;
+  display: flex;
+  padding: 0 4em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.container {
+  perspective: 1000px;
+  height: 100vh;
+  width: 100%;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.card {
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.4em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+}
+.front {
+  background: linear-gradient(to right, #1689AF, #145CAE);
+}
+.front img {
+  width: 7em;
+}
+.content {
+  transform: translateZ(60px);
+}
+.content h3 {
+  font-size: 22px;
+  margin-top: 1em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.content p {
+  font-size: 14px;
+  line-height: 2em;
+  letter-spacing: 0.02em;
+  padding: 0 3em;
+}
+.content ul li {
+  font-size: 14px;
+  line-height: 2em;
+  letter-spacing: 0.02em;
+  padding: 0 3em;
+  list-style-position: inside;
+  text-align: left;
+}
+.back {
+  background-color: #28253a;
+  transform: rotateX(180deg);
+}
+.container:hover .card {
+  transform: rotateX(180deg);
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 0 1em;
+  }
+  .container {
+    flex-basis: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 1.5em;
+  }
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #151320;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
